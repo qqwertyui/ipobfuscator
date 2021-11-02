@@ -18,14 +18,14 @@ def ip2octal(ip, zeros=1):
     result = ""
     for i in ip:
         result += zeros*"0"+oct(i)[2:]+"."
-    return result.removesuffix(".")    
+    return result[0:-1]
 
 def ip2hex(ip, merged=True):
     result = ""
     if(merged):
         for i in ip:
             result += hex(i)+"."
-        result = result.removesuffix(".")
+        result = result[0:-1]
     else:
         result = hex(int(ip2dword(ip,4)))
     return result
